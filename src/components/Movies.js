@@ -10,6 +10,10 @@ const GENERIC_MOVIE_GENRE = "Movie Genre"
 class Movies extends Component {
   constructor(props) {
     super(props)
+    this.titleContent = React.createRef()
+    this.descContent = React.createRef()
+    this.yearContent = React.createRef()
+    this.genreContent = React.createRef()
     this.state = {
       title: GENERIC_MOVIE_TITLE,
       desc: GENERIC_MOVIE_DESCRIPTION,
@@ -81,10 +85,10 @@ class Movies extends Component {
         </div>
       )
     } else {
-      titleElement = <h5 className='card-title'>{this.state.title}</h5>
-      descElement = <h5 className='card-body'>{this.state.desc}</h5>
-      yearElement = <h5 className='card-title'>{this.state.year}</h5>
-      genreElement = <h5 className='card-title'>{this.state.genre}</h5>
+      titleElement = <h2 className='card-title'>{this.state.title}</h2>
+      descElement = <p className='card-title'>{this.state.desc}</p>
+      yearElement = <p className='card-title'>{this.state.year}</p>
+      genreElement = <p className='card-title'>{this.state.genre}</p>
       buttonArea = (
         <div>
           <button className='btn btn-info' onClick={this.handleEdit.bind(this)}>
@@ -98,7 +102,7 @@ class Movies extends Component {
     }
 
     return (
-      <div className='col-sm-6'>
+      <div className='col-md-6'>
         <div className='card card-view'>
           <div className='card-body'>
             {titleElement}
