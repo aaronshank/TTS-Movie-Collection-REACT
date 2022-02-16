@@ -6,6 +6,7 @@ const GENERIC_MOVIE_TITLE = "Movie Title"
 const GENERIC_MOVIE_DESCRIPTION = "Movie Description"
 const GENERIC_MOVIE_YEAR = 2000
 const GENERIC_MOVIE_GENRE = "Movie Genre"
+//const HAS_WATCHED = false
 
 class Movies extends Component {
   constructor(props) {
@@ -14,11 +15,13 @@ class Movies extends Component {
     this.descContent = React.createRef()
     this.yearContent = React.createRef()
     this.genreContent = React.createRef()
+    //this.hasWatched = React.createRef()
     this.state = {
       title: GENERIC_MOVIE_TITLE,
       desc: GENERIC_MOVIE_DESCRIPTION,
       year: GENERIC_MOVIE_YEAR,
       genre: GENERIC_MOVIE_GENRE,
+      //hasWatched: HAS_WATCHED,
       editMode: false
     }
   }
@@ -35,6 +38,7 @@ class Movies extends Component {
       desc: this.descContent.current.value,
       year: this.yearContent.current.value,
       genre: this.genreContent.current.value,
+      //hasWatched: false,
       editMode: false
     })
   }
